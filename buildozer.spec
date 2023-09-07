@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = LoveCalc
+title = pdf reader
 
 # (str) Package name
-package.name = LoveCalculator
+package.name = pdf
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.stack
@@ -13,7 +13,7 @@ package.domain = org.stack
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,so,wav
+source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -37,7 +37,7 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 # requirements = python3.8,kivy,requests,urllib3,chardet,idna,ffpyplayer
-requirements = python3,kivy,requests,urllib3,chardet,idna,ffpyplayer
+requirements = python3,kivy
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -47,7 +47,7 @@ requirements = python3,kivy,requests,urllib3,chardet,idna,ffpyplayer
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
-icon.filename = %(source.dir)s/images/appicon.png
+#icon.filename = %(source.dir)s/images/appicon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -83,7 +83,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = INTERNET
+android.permissions = permission.READ_EXTERNAL_STORAGE
 
 # (int) Target Android API, should be as high as possible.
 android.api = 28
