@@ -4,7 +4,7 @@
 title = classmate
 
 # (str) Package name
-package.name = pdf
+package.name = class
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.stack
@@ -37,7 +37,7 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 # requirements = python3.8,kivy,requests,urllib3,chardet,idna,ffpyplayer
-requirements = python3,kivy,firebase,pyrebase4,wikipedia
+requirements = python3,kivy,firebase,pyrebase4,wikipedia,pillow
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -86,7 +86,7 @@ fullscreen = 0
 android.permissions = permission.READ_EXTERNAL_STORAGE, permission.INTERNET
 
 # (int) Target Android API, should be as high as possible.
-android.api = 28
+android.api = 30
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
