@@ -4,7 +4,7 @@
 title = classmate
 
 # (str) Package name
-package.name = class
+package.name = classmate
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.stack
