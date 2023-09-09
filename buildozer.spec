@@ -86,7 +86,7 @@ fullscreen = 0
 android.permissions = permission.READ_EXTERNAL_STORAGE, permission.INTERNET
 
 # (int) Target Android API, should be as high as possible.
-android.api = 30
+android.api = 28
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
