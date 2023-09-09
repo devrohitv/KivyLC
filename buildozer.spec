@@ -37,7 +37,7 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 # requirements = python3.8,kivy,requests,urllib3,chardet,idna,ffpyplayer
-requirements = python3,kivy,firebase,pyrebase4,wikipedia,pillow
+requirements = python3,kivy,firebase,pyrebase4, gcloud, googleapis-common-protos, protobuf, httplib2, pyparsing, oauth2client, pyasn1, pyasn1-modules, rsa, pycryptodome, python-jwt, jws, requests, certifi, chardet, idna, urllib3, requests-toolbelt , jwcrypto, cryptography, deprecated, wrapt,wikipedia,pillow
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -83,7 +83,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = permission.READ_EXTERNAL_STORAGE, permission.INTERNET
+android.permissions = READ_EXTERNAL_STORAGE,INTERNET
 
 # (int) Target Android API, should be as high as possible.
 android.api = 28
