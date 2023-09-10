@@ -47,7 +47,7 @@ requirements = python3,kivy==2.1.0
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
-icon.filename = %(source.dir)s/images/appicon.png
+#icon.filename = %(source.dir)s/images/appicon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
