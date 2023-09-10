@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = LoveCalc
+title = Calculator
 
 # (str) Package name
-package.name = LoveCalculator
+package.name = Calculatorapp
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.stack
@@ -13,7 +13,7 @@ package.domain = org.stack
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,so,wav
+source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -36,8 +36,8 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-# requirements = python3.8,kivy,requests,urllib3,chardet,idna,ffpyplayer
-requirements = python3,kivy,requests,urllib3,chardet,idna,ffpyplayer
+# requirements = python3.8,kivy
+requirements = python3,kivy
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
