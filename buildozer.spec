@@ -4,10 +4,9 @@
 title = Calculator
 
 # (str) Package name
-package.name = Calculatorapp
-
+package.name = fire
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.calcu
+package.domain = org.fire
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -36,7 +35,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0
+requirements = python3,kivy==2.1.0,firebase
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -83,7 +82,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
 android.api = 28
