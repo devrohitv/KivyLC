@@ -1,0 +1,14 @@
+<MyData>:
+	orientation: "vertical"
+
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'hii'
+			id: button
+			size: self.texture_size
+			text_size: self.width, None
+
+		Button:
+			text: 'press me'
+			on_press: root.show_data()
