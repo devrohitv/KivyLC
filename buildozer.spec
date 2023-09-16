@@ -35,7 +35,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0,firebase,firebase-admin, cachecontrol, msgpack, requests, certifi, chardet, idna, urllib3, google-api-core, google-auth, cachetools, pyasn1-modules, pyasn1, rsa, pyasn1, googleapis-common-protos, protobuf, google-api-python-client, google-auth-httplib2, httplib2, pyparsing, uritemplate, google-cloud-firestore, google-cloud-core, proto-plus, google-cloud-storage, google-resumable-media, google-crc32c
+requirements = python3,kivy==2.1.0, pyrebase4, gcloud, googleapis-common-protos, protobuf, httplib2, pyparsing, oauth2client, pyasn1, pyasn1-modules, rsa, pycryptodome, python-jwt, jws, requests, certifi, chardet, idna, urllib3, requests-toolbelt , jwcrypto, cryptography, deprecated, wrapt
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
