@@ -1,0 +1,15 @@
+<MyData>:
+	orientation: "vertical"
+
+	BoxLayout:
+		orientation: 'vertical'
+		Image:
+			id: image
+			size: self.texture_size
+			source: root.source_file
+
+		Button:
+			text: 'get image'
+			size_hint: .7, .2
+			pos_hint: {'center_x': .5}
+			on_press: app.root.show_data()
