@@ -3,10 +3,15 @@
 
 	BoxLayout:
 		orientation: 'vertical'
-		Image:
-			id: image
-			size: self.texture_size
-			source: root.source_file
+		BoxLayout:
+			orientation: "vertical"
+			AsyncImage:
+				id: image
+				size: self.texture_size
+				source: "https://storage.googleapis.com/classmate-classes.appspot.com/image.jpg"
+			Image:
+				size: self.texture_size
+				source: root.source_file
 
 		Button:
 			text: 'get image'
