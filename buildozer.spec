@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Calculator
+title = nooo
 
 # (str) Package name
 package.name = fire
@@ -35,7 +35,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0, pyrebase4,geocoder,email-validator,requests,urllib3,chardet,idna,ratelim,decorator,click,dnspython,pillow,oauth2client,httplib2,pyparsing,pyasn1,pyasn1_modules,virtualenv,six,sh,rsa,requests-toolbelt,python-jwt,pygments,pycryptodome,ptyprocess,protobuf,platformdirs,pexpect,kivy-garden.mapview,kivy-garden,jws,googleapis-common-protos,gcloud,future,filelock,docutils,distlib,backports.entry-points-selectable,jwcrypto,cryptography,Deprecated,wrapt
+requirements = python3,kivy==2.1.0, pyrebase4,requests==2.25.1,Pillow==8.2.0,CacheControl,cachetools,certifi,cffi,chardet,google-auth-httplib2,google-cloud-core,google-cloud-firestore,google-crc32c,google-resumable-media,googleapis-common-protos,grpcio,httplib2,idna,jws,msgpack,oauth2client,packaging,pytz,requests-toolbelt,rsa,uritemplate,proto-plus,protobuf,pyasn1,pyasn1-modules,pycparser,pycryptodome,jwt,pyparsing,firebase_admin,google-auth,google-api-python-client,google-cloud,google-cloud-storage,google,google-api-core,pyrebase,urllib3,jnius,android,pyOpenSSL
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
