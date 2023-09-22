@@ -1,45 +1,46 @@
 import os
-# from kivy.clock import Clock
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
-from pyrebase import pyrebase
-import json
+import firebase_admin
+from firebase_admin import credentials, storage
 
-with open('serviceAccount.json', 'r') as file_obj:
-    f = json.load(file_obj)
-config = {
-    "apiKey": "AIzaSyAxiO8FrPTUF4I7PSR6i8ZlqXWJMeVyYxQ",
-    "authDomain": "classmate-classes-f9057.firebaseapp.com",
-    "databaseURL": "https://classmate-classes-f9057-default-rtdb.firebaseio.com",
-    "projectId": "classmate-classes-f9057",
-    "storageBucket": "classmate-classes-f9057.appspot.com",
-    "messagingSenderId": "286165438643",
-    "appId": "1:286165438643:web:658c70f981cf5b8cabe0c6",
-    "measurementId": "G-18KW9VP3P6",
-    "serviceAccount": f,
-    "databaseUrl": "https://classmate-classes-f9057-default-rtdb.firebaseio.com/"
-}
-firebase_ = pyrebase.initialize_app(config)
+
+cred = credentials.Certificate("fireadmin.json")
+firebase_admin.initialize_app(cred, {"storageBucket": "classmate-classes.appspot.com"})
 
 
 class MyData(BoxLayout):
     source_file = StringProperty("")
 
     def show_data(self):
-        storage = firebase_.storage()
-        # storage.child('hello').put('C:/Users/user/Downloads/GITHUBERROR.jpg')
-        storage.download("hello", f"{'file'}/{'my.jpg'}")
-        # url = storage.child("hello").get_url(user["idToken"])
-        # url = storage.child("hello").get_url(["idToken"])
-        # print(url)
+        #self.upload_file()
+        self.download_file()
+        self.crud()
 
-        print("downloaded")
+    try:
+        def upload_file(self):
+            bucket = storage.bucket()
+            blob = bucket.blob("image.jpg")
+            blob.upload_from_filename("file/my.jpg")
+            print(f"File {'my.jpg'} uploaded to {'image.jpg'}.")
+            blob.make_public()
+            print(blob.public_url)
 
-        self.source_file = "file/my.jpg"
+        def download_file(self):
+            bucket = storage.bucket()
+            blob = bucket.blob("image.jpg")
+            blob.download_to_filename("file/adminimage.jpg")
+            print(f"File {'image.jpg'} downloaded to {'file/adminimage.jpg'}.")
+
+    except Exception as e:
+        print(e)
+
+    def crud(self):
+        self.source_file = "file/adminimage.jpg"
 
         try:
-            os.remove("file/my.jpg")
+            os.remove("file/adminimage.jpg")
             print("successfully deleted")
         except Exception as g:
             print(g)
