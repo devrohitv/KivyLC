@@ -1,3 +1,5 @@
+import os
+# from kivy.clock import Clock
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
@@ -23,13 +25,24 @@ firebase_ = pyrebase.initialize_app(config)
 
 class MyData(BoxLayout):
     source_file = StringProperty("")
+
     def show_data(self):
         storage = firebase_.storage()
         # storage.child('hello').put('C:/Users/user/Downloads/GITHUBERROR.jpg')
         storage.download("hello", f"{'file'}/{'my.jpg'}")
+        # url = storage.child("hello").get_url(user["idToken"])
+        # url = storage.child("hello").get_url(["idToken"])
+        # print(url)
+
         print("downloaded")
 
         self.source_file = "file/my.jpg"
+
+        try:
+            os.remove("file/my.jpg")
+            print("successfully deleted")
+        except Exception as g:
+            print(g)
 
 
 class MyApp(App):
