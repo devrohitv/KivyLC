@@ -35,7 +35,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0, pyrebase4, gcloud, googleapis-common-protos, protobuf, httplib2, pyparsing, oauth2client, pyasn1, pyasn1-modules, rsa, pycryptodome, python-jwt, jws, requests, certifi, chardet, idna, urllib3, requests-toolbelt , jwcrypto, cryptography, deprecated, wrapt
+requirements = python3,kivy==2.1.0, pyrebase4,geocoder,email-validator,requests,urllib3,chardet,idna,ratelim,decorator,click,dnspython,pillow,oauth2client,httplib2,pyparsing,pyasn1,pyasn1_modules,virtualenv,six,sh,rsa,requests-toolbelt,python-jwt,pygments,pycryptodome,ptyprocess,protobuf,platformdirs,pexpect,kivy-garden.mapview,kivy-garden,jws,googleapis-common-protos,gcloud,future,filelock,docutils,distlib,backports.entry-points-selectable,jwcrypto,cryptography,Deprecated,wrapt
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
