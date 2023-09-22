@@ -1,12 +1,14 @@
 import os
+import json
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
 import firebase_admin
 from firebase_admin import credentials, storage
 
-
-cred = credentials.Certificate("fireadmin.json")
+with open("fireadmin.json") as f:
+    d = json.load(f)
+cred = credentials.Certificate(d)
 firebase_admin.initialize_app(cred, {"storageBucket": "classmate-classes.appspot.com"})
 
 
