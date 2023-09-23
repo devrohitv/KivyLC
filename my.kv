@@ -1,8 +1,14 @@
 <MyData>:
 	orientation: "vertical"
-
 	BoxLayout:
 		orientation: 'vertical'
+		BoxLayout:
+			Label:
+				text: "hello"
+				id: notice
+				color: "red"
+				size_hint: 1, .4
+				font_size: sp(30)
 		BoxLayout:
 			orientation: "vertical"
 			AsyncImage:
@@ -13,8 +19,16 @@
 				size: self.texture_size
 				source: root.source_file
 
-		Button:
-			text: 'get image'
-			size_hint: .7, .2
-			pos_hint: {'center_x': .5}
-			on_press: app.root.show_data()
+		BoxLayout:
+			Button:
+				text: 'download image'
+				size_hint: 1, .2
+				on_press: app.root.down_data()
+			Button:
+				text: 'show image'
+				size_hint: 1, .2
+				on_press: app.root.show_image()
+			Button:
+				text: 'delete image'
+				size_hint: 1, .2
+				on_press: app.root.delete()
