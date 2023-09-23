@@ -19,23 +19,17 @@ d = {
   "universe_domain": "googleapis.com"
 }
 
-
 cred = credentials.Certificate(d)
 firebase_admin.initialize_app(cred, {"storageBucket": "classmate-classes.appspot.com"})
 
-try:
-    os.remove("file/adminimage.jpg")
-    print("successfully deleted")
-except Exception as g:
-    print(g)
 
 class MyData(BoxLayout):
     source_file = StringProperty("")
 
-    def show_data(self):
-        #self.upload_file()
+    def down_data(self):
+        # self.crud()
+        # self.upload_file()
         self.download_file()
-        #self.crud()
 
     try:
         def upload_file(self):
@@ -51,11 +45,23 @@ class MyData(BoxLayout):
             blob = bucket.blob("image.jpg")
             blob.download_to_filename("file/adminimage.jpg")
             print(f"File {'image.jpg'} downloaded to {'file/adminimage.jpg'}.")
-            self.source_file = "file/adminimage.jpg"
+            w = f"File {'image.jpg'} downloaded to {'file/adminimage.jpg'}."
+            self.ids.notice.text = w
 
     except Exception as e:
         print(e)
 
+    def show_image(self):
+        self.source_file = "file/adminimage.jpg"
+
+    def delete(self):
+        try:
+            os.remove("file/adminimage.jpg")
+            print("successfully deleted")
+            self.ids.notice.text = "successfully deleted"
+        except Exception as g:
+            print(g)
+            self.ids.notice.text = g
 
 
 class MyApp(App):
