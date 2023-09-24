@@ -1,4 +1,5 @@
 import os
+import certifi
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
@@ -12,6 +13,9 @@ result = context.getExternalFilesDir("images")   # don't forget the argument
 if result:
     storage_path = str(result.toString())
 
+
+# Here's all the magic !
+os.environ['SSL_CERT_FILE'] = certifi.where()
 
 cred = credentials.Certificate("fireadmin.json")
 firebase_admin.initialize_app(cred, {"storageBucket": "classmate-classes.appspot.com"})
