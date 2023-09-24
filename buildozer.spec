@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = nooo
+title = user doc
 
 # (str) Package name
-package.name = fire
+package.name = userdoc
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.fire
 
@@ -12,7 +12,7 @@ package.domain = org.fire
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = py,png,jpg,kv,atlas,json
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
