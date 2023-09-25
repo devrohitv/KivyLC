@@ -1,5 +1,5 @@
 import os
-import certifi
+import urllib.request
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
@@ -9,13 +9,10 @@ from android.permissions import check_permission, request_permissions, Permissio
 from android import mActivity
 
 context = mActivity.getApplicationContext()
-result = context.getExternalFilesDir("images")   # don't forget the argument
+result = context.getExternalFilesDir("images")   
 if result:
     storage_path = str(result.toString())
 
-
-# Here's all the magic !
-os.environ['SSL_CERT_FILE'] = certifi.where()
 
 cred = credentials.Certificate("fireadmin.json")
 firebase_admin.initialize_app(cred, {"storageBucket": "classmate-classes.appspot.com"})
@@ -23,6 +20,7 @@ firebase_admin.initialize_app(cred, {"storageBucket": "classmate-classes.appspot
 
 class MyData(BoxLayout):
     source_file = StringProperty("")
+    image_file = StringProperty("")
 
     def down_data(self):
         # self.crud()
@@ -50,13 +48,25 @@ class MyData(BoxLayout):
         print(e)
 
     def show_image(self):
+        urllib.request.urlretrieve(
+            "https://storage.googleapis.com/classmate-classes.appspot.com/image.jpg",
+            "myname.jpg")
+
+        # img = Image.open("myname.png")
+        # img.show()
+        self.image_file = "myname.jpg"
         self.source_file = f"{storage_path}/adminimage.jpg"
 
     def delete(self):
         try:
-            os.remove(f"{storage_path}/adminimage.jpg")
-            print("successfully deleted")
-            self.ids.notice.text = "successfully deleted"
+            path = f"{storage_path}/adminimage.jpg"
+            file = os.path.isfile(path)
+            if file == True:
+                os.remove("file/adminimage.jpg")
+                print("successfully deleted")
+                self.ids.notice.text = "successfully deleted"
+            else:
+                self.ids.notice.text = "file does not exist"
         except Exception as g:
             print(g)
             self.ids.notice.text = g
