@@ -11,10 +11,10 @@
 				font_size: sp(30)
 		BoxLayout:
 			orientation: "vertical"
-			AsyncImage:
+			Image:
 				id: image
 				size: self.texture_size
-				source: "https://storage.googleapis.com/classmate-classes.appspot.com/image.jpg"
+				source: root.image_file
 			Image:
 				size: self.texture_size
 				source: root.source_file
