@@ -1,5 +1,4 @@
 import os
-import urllib.request
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
@@ -48,13 +47,7 @@ class MyData(BoxLayout):
         print(e)
 
     def show_image(self):
-        urllib.request.urlretrieve(
-            "https://storage.googleapis.com/classmate-classes.appspot.com/image.jpg",
-            "myname.jpg")
-
-        # img = Image.open("myname.png")
-        # img.show()
-        self.image_file = "myname.jpg"
+        self.image_file = "https://storage.googleapis.com/classmate-classes.appspot.com/image.jpg"
         self.source_file = f"{storage_path}/adminimage.jpg"
 
     def delete(self):
