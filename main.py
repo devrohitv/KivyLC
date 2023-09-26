@@ -61,7 +61,7 @@ class MyData(BoxLayout):
         try:
             path = f"{storage_path}/adminimage.jpg"
             file = os.path.isfile(path)
-            if file == True:
+            if file:
                 os.remove(f"{storage_path}/adminimage.jpg")
                 print("successfully deleted")
                 self.ids.notice.text = "successfully deleted"
