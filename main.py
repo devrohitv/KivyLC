@@ -6,6 +6,9 @@ import firebase_admin
 from firebase_admin import credentials, storage
 from android.permissions import check_permission, request_permissions, Permission
 from android import mActivity
+import certifi
+
+resp = request.urlopen(req, cafile=certifi.where())
 
 context = mActivity.getApplicationContext()
 result = context.getExternalFilesDir("images")   
